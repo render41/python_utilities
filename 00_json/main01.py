@@ -7,7 +7,7 @@ datarequest = json.load(filelink)
 
 requestsGET = requests.get(datarequest['link'])
 
-requestsPOST = requests.post(datarequest['link'])
+#requestsPOST = requests.post(datarequest['link'])
 
 try:
     requestsJSON = requestsGET.json()
