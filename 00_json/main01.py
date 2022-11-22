@@ -2,11 +2,9 @@ import requests
 import json
 
 filelink = open('test.json')
-
 datarequest = json.load(filelink)
 
 requestsGET = requests.get(datarequest['link'])
-
 #requestsPOST = requests.post(datarequest['link'])
 
 try:
