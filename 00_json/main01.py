@@ -1,11 +1,13 @@
 import requests
 import json
 
-requestsGET = requests.get(
-    'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
+filelink = open('test.json')
 
-requestsPOST = requests.post(
-    'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
+datarequest = json.load(filelink)
+
+requestsGET = requests.get(datarequest['link'])
+
+requestsPOST = requests.post(datarequest['link'])
 
 try:
     requestsJSON = requestsGET.json()
@@ -14,3 +16,5 @@ except:
     print("No Capture Request.")
 finally:
     print("End Try/Except.")
+
+filelink.close()
